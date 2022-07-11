@@ -25,4 +25,13 @@ public class CarDaoImp implements CarDao {
       TypedQuery<Car> query=sessionFactory.getCurrentSession().createQuery("from Car");
       return query.getResultList();
    }
+
+   @Override
+   public Car getCarByModelAndSeries(String model, int series) {
+      TypedQuery<Car> query=sessionFactory.getCurrentSession().createQuery("from Car car where car.model=:model and car.series=:series");
+      query.setParameter("model", model);
+      query.setParameter("series", series);
+      List<Car> results = query.getResultList();
+      return results.size() > 0 ? results.get(0) : null;
+   }
 }

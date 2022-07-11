@@ -7,4 +7,5 @@ import java.util.List;
 public interface CarService {
     void add(Car car);
     List<Car> listCars();
+    public Car getCarByModelAndSeries(String model, int series);
 }

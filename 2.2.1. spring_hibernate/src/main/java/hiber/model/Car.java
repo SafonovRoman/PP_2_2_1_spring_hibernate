@@ -14,4 +14,11 @@ public class Car {
 
     @Column(name = "series")
     private Integer series;
+
+    public Car() {}
+
+    public Car(String model, Integer series) {
+        this.model = model;
+        this.series = series;
+    }
 }

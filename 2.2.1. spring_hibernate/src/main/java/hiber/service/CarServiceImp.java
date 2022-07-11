@@ -29,4 +29,8 @@ public class CarServiceImp implements CarService {
       return carDao.listCars();
    }
 
+   @Override
+   public Car getCarByModelAndSeries(String model, int series) {
+      return carDao.getCarByModelAndSeries(model,series);
+   }
 }
